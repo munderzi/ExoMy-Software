@@ -6,11 +6,11 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Basic tools
 RUN apt-get update && \
-    apt-get install nano git tmux wget curl python-pip net-tools iputils-ping -y
+    apt-get install apt-utils nano git wget curl python3-pip net-tools iputils-ping python-is-python3 -y
 
 # Install additional ros packages
 RUN apt-get update && apt-get install ros-noetic-joy -y
-RUN pip install adafruit-pca9685
+RUN pip install adafruit-circuitpython-pca9685
 
 # Install packages for camera use
 RUN apt-get update && \
