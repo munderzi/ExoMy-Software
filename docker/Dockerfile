@@ -1,5 +1,5 @@
 # Base image
-FROM ros:melodic 
+FROM ros:noetic
 
 ENV TZ=Europe/Zurich
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -9,15 +9,15 @@ RUN apt-get update && \
     apt-get install nano git tmux wget curl python-pip net-tools iputils-ping -y
 
 # Install additional ros packages
-RUN apt-get update && apt-get install ros-melodic-joy -y
+RUN apt-get update && apt-get install ros-noetic-joy -y
 RUN pip install adafruit-pca9685
 
 # Install packages for camera use
 RUN apt-get update && \
-    apt-get install ros-melodic-usb-cam -y
+    apt-get install ros-noetic-usb-cam -y
 
 # Add ros sourcing to bashrc
-RUN echo ". /opt/ros/melodic/setup.bash" >> ~/.bashrc
+RUN echo ". /opt/ros/noetic/setup.bash" >> ~/.bashrc
 
 # Create Ros workspace
 ENV EXOMY_WS=/root/exomy_ws
