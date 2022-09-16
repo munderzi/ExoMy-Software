@@ -7,16 +7,6 @@
         <param name="coalesce_interval" value="0.05"/>
     </node>
     
-    <node pkg="usb_cam" type="usb_cam_node" name="pi_cam" respawn="false" output="screen">
-        <param name="framerate" value="10"/>
-        <param name="video_device" value="/dev/video0"/>
-        <param name="image_width" value="640"/>
-        <param name="image_height" value="480"/>
-        <param name="pixel_format" value="yuyv"/>
-        <param name="camera_frame_id" value="pi_cam"/>
-        <param name="io_method" value="mmap"/>
-    </node>
-    
     <rosparam file="$(find exomy)/config/exomy.yaml"/> 
 
 </launch>
