@@ -64,10 +64,8 @@ fi
 # Run docker container
 docker run \
     -it \
-    -v ~/ExoMy_Software:/root/exomy_ws/src/exomy \
-    -p 8000:8000 \
-    -p 8080:8080 \
-    -p 9090:9090 \
+    -v ~/exomy:/root/exomy_ws/src/exomy \
+    -p 11311:11311 \
     --privileged \
     ${options} \
     --name "${container_name}" \
